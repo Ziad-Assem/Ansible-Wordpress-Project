@@ -1,0 +1,19 @@
+- hosts: wordpress
+  become: yes
+  vars:
+    db_name: wordpress
+    db_user: zozz
+    db_password: 12341234
+    db_host: "<MariaDB Public IP>"
+  roles:
+    - apache_wordpress
+
+- hosts: database
+  become: yes
+  vars:
+    db_name: wordpress
+    db_user: zozz
+    db_password: 12341234
+    db_host: "<MariaDB Public IP>"
+  roles:
+    - mariadb
