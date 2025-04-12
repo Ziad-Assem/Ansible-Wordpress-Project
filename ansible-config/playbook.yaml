@@ -4,9 +4,10 @@
     db_name: wordpress
     db_user: zozz
     db_password: 12341234
-    db_host: "<MariaDB Public IP>"
+    db_host: <"Public DB IP">
   roles:
-    - apache_wordpress
+    - apache
+    - php_wordpress
 
 - hosts: database
   become: yes
@@ -14,6 +15,6 @@
     db_name: wordpress
     db_user: zozz
     db_password: 12341234
-    db_host: "<MariaDB Public IP>"
+    db_host: <"Public DB IP">
   roles:
     - mariadb
